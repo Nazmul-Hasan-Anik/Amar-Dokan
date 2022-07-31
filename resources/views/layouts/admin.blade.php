@@ -27,6 +27,7 @@
     <div class="main-panel">
         @include('layouts.include.admin-nav')
         <div class="content">
+        
           @yield('content')
           </div>
             @include('layouts.include.admin-footer')

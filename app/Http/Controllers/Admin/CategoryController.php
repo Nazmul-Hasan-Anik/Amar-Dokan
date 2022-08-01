@@ -10,7 +10,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('admin.category.index');
+        $categories=Category::all();
+        return view('admin.category.index',compact('categories'));
         
     }
     public function add()
@@ -25,7 +26,7 @@ class CategoryController extends Controller
             $file=$request->file('image');
             $ext=$file->getClientOriginalExtension();
             $filename=time().".".$ext;
-            $file->move('asset.upload.category',$filename);
+            $file->move('asset/upload/category',$filename);
             $category->image=$filename;
 
         }

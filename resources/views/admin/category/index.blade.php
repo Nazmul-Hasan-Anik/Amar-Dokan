@@ -2,10 +2,43 @@
 @section('content')
 
 <div class="card">
-  <div class="card-body">
-    <h1>Category Page</h1>
+    <div class="card-header">
+        <h4>Category Page</h4>
+    </div>
 
-  </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Action</th>
+            </thead>
+
+            <tbody>
+                @foreach ( $categories as $category )
+
+
+                <tr>
+                    <td>{{ $category->id }}</td>
+                    <td>{{ $category->name }}</td>
+                    <td>{{ $category->description }}</td>
+                    <td>
+                      <img src="{{ asset('asset/upload/category/'.$category->image) }}" class="cat-img" alt="Image Here">
+                    </td>
+                    <td>
+                      <button class="btn btn-primary">Edit</button>
+                      <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+
+
+    </div>
 
 </div>
 

@@ -11,6 +11,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('admin.category.index');
+        
     }
     public function add()
     {
@@ -33,11 +34,11 @@ class CategoryController extends Controller
         $category->slug=$request->input('slug');
         $category->description=$request->input('description');
         $category->status=$request->input('status')==TRUE ? '1':'0';
-        $category->status=$request->input('popular')==TRUE ? '1':'0';
+        $category->popular=$request->input('popular')==TRUE ? '1':'0';
         $category->meta_title=$request->input('meta_title');
         $category->meta_descrip=$request->input('meta_descrip');
         $category->meta_keywords=$request->input('meta_keywords');
         $category->save();
-        // return Redirect()->route('home.page')->with('status','Category inserted successfully');
+        return redirect('dashboard');
     }
 }

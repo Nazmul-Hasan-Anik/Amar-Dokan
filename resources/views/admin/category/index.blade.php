@@ -27,8 +27,8 @@
                     <td>
                       <img src="{{ asset('asset/upload/category/'.$category->image) }}" class="cat-img" alt="Image Here">
                     </td>
-                    <td>
-                      <button class="btn btn-primary">Edit</button>
+                    <td> <a href="{{route('edit.cat',$category->id)}}">
+                      <button class="btn btn-primary">   Edit </button> </a>
                       <button class="btn btn-danger">Delete</button>
                     </td>
                 </tr>

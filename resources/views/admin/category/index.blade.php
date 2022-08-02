@@ -1,6 +1,14 @@
 @extends('layouts.admin')
 @section('content')
 
+      @if(Session('success'))
+      <div class="alert alert-success" role="alert">
+        {{Session('success')}}
+      </div>
+
+
+      @endif
+
 <div class="card">
     <div class="card-header">
         <h4>Category Page</h4>
@@ -29,7 +37,8 @@
                     </td>
                     <td> <a href="{{route('edit.cat',$category->id)}}">
                       <button class="btn btn-primary">   Edit </button> </a>
-                      <button class="btn btn-danger">Delete</button>
+                      <a href="{{route('delete.cat',$category->id)}}">
+                      <button class="btn btn-danger">Delete</button></a>
                     </td>
                 </tr>
                 @endforeach

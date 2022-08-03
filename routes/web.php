@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +33,13 @@ Route::middleware(['auth','isAdmin'])->group(function () {
    Route::get('edit_cat/{id}',[CategoryController::class,'edit'])->name('edit.cat');
    Route::put('update_cat/{id}', [CategoryController::class, 'update']);
    Route::get('delete_cat/{id}',[CategoryController::class,'delete'])->name('delete.cat');
+
+//    Product
+     Route::get('products', [ProductController::class,"index"]);
+     Route::get('add-products', [ProductController::class,"add"]);
+    Route::get('edit_product/{id}',[ProductController::class,'edit'])->name('edit.product');
+    Route::get('delete_product/{id}',[ProductController::class,'delete'])->name('delete.product');
+    Route::post('insert-products', [ProductController::class,"insert"]);
+    Route::put('update-products/{id}', [ProductController::class, 'update']);
+
    });

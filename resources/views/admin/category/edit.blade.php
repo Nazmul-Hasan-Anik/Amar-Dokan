@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h1>Add Category</h1>
+        <h1>Edit Category</h1>
     </div>
     <div class="row">
         <div class="col-md-8">

@@ -41,6 +41,7 @@ Welcome to Amar Dokan
     @foreach ($trending_cat as $tcat )
                 
                 <div class="item">
+                    <a href="{{ url('view-category/'.$tcat ->slug) }}">
                 <div class="card">
                     <img src="{{ asset('asset/upload/category/'.$tcat->image) }}" alt="Product Image">
                     <div class="card-body">
@@ -50,6 +51,7 @@ Welcome to Amar Dokan
                         </p>
                     </div>
                 </div>
+                </a>
             </div>
             @endforeach
     

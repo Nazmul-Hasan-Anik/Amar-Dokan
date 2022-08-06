@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Illuminate\Validation\Rules\Exists;
 
 class FrontController extends Controller
 {
@@ -19,5 +20,19 @@ class FrontController extends Controller
     {
         $category=Category::where('status','0')->get();
         return view('frontend.category',compact('category'));
+    
+    }
+
+    public function viewcategory($slug)
+    {
+        if (Category::where('slug', $slug)->exists()) {
+            $categories=Category::where('slug',$slug)->first();
+            $products=Product::where('cate_id',$categories->id)->where('status','0')->get();
+            return view('frontend.products.index',compact('categories','products'));
+        }
+
+        else{
+            return redirect('/')->with('Failed','Slug Not Found');
+        }
     }
 }

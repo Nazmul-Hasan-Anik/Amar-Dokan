@@ -16,6 +16,7 @@
                 
                 @foreach ($category as $cat )
                 <div class="col-md-3 mb-3">
+                    <a href="{{ url('view-category/'.$cat->slug) }}">
                 <div class="card">
                     <img src="{{ asset('asset/upload/category/'.$cat->image) }}" alt="Category Image">
                     <div class="card-body">
@@ -26,6 +27,7 @@
                         
                     </div>
                 </div>
+                </a>
             </div>
                     
                 @endforeach

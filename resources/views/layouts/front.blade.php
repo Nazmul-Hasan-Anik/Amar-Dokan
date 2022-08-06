@@ -23,6 +23,11 @@
     <link href="{{ asset('Frontend/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('Frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('Frontend/css/owl.theme.default.css') }}" rel="stylesheet">
+    <style>
+        a{
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body>
     @include('layouts.include.front-nav')

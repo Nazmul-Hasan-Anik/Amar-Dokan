@@ -56,7 +56,7 @@ class ProductController extends Controller
         $products->meta_keyword=$request->input('meta_keyword');
         $products->meta_description=$request->input('meta_description');
         $products->save();
-        return redirect('products')->with('success','Category inserted successfully');
+        return redirect('products')->with('success','Product inserted successfully');
     }
 
     public function update(Request $request,$id)
